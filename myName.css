@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@900&display=swap');
+
+/*
+colors: pink, blue, yellow, gold, dark pink
+#D99A9F
+#4193A6
+#F2C849
+#D9A443
+#D96C6C
+*/
+
+body {
+    font-family: 'Merriweather', serif;
+}
+
+#firstBody {
+  font-size: 30px;
+}
+
+#secondBody {
+  font-size: 44px;
+  text-align: center;
+}
