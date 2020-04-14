@@ -12,7 +12,7 @@ Feel free to reach out either through [Instagram](https://www.instagram.com/hapa
 Included in this section are my projects for Informatics 190. The class focuses on programming for sound and music applications.
 
 
-* Week 3 - [Type your name to play sounds](https://emma6pv.github.io/week3)
+* Week 3 - [Type your name to play sounds](https://emma6pv.github.io/week3-hw)
 * Week 4 - ???
 
 ### Camp Tenacity: An iOS App for Mindful Breathing
