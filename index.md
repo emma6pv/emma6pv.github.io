@@ -13,7 +13,7 @@ Feel free to reach out either through [Instagram](https://www.instagram.com/hapa
 
 ## INF 190: Computer Audio and Music Programming
 
-Included in this section are my projects for Informatics 190. The class focuses on programming for sound and music applications.
+Included in this section are my projects for Informatics 190. The class covers programming for sound and music applications.
 
 * Week 3 - [Type your name to play sounds](https://emma6pv.github.io/ComputerMusic/week3/myName.html)
 * Week 4 - ???
