@@ -2,13 +2,14 @@
 layout: default
 ---
 
-Text can be **bold**, _italic_, or ~~strikethrough~~.
+**Welcome to my GitHub Page! My name's Emma.**
 
-[Link to another page](./another-page.html).
+I am an iOS engineer studying Human-Computer Interaction at UC Irvine. On the side, I host a funk & soul radio show [The Groove](https://kuci.org/wp/shows/the-groove/). I also make zines, some of which have been [archived](https://ls2pac.lapl.org/?section=resource&resourceid=1851847881) in the Los Angeles Public Library. 
 
-There should be whitespace between paragraphs.
+**Below you'll find some of my latest projects.**
 
-There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.
+Feel free to reach out either through Instagram or LinkedIn. I love talking about tech ethics, Steve Buscemi, and vinyl records. Let's chat!
+
 
 # Header 1
 
