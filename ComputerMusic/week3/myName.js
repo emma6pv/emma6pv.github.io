@@ -1,7 +1,3 @@
-
-let myName = "emma anderson"
-let userCount = 0
-
 let letters = [
   "<span style='color: #4193A6'>E</span> ",
   "<span style='color: #F2C849'>m</span> ",
@@ -35,49 +31,74 @@ let soundbites = [
   "sounds/BA13.mp3",
 ]
 
-// <video id="myVid" width="400" height="200">
-//  <source src="beach.mp4" type="video/mp4">
-//   Sorry, your browser does not support HTML5 video.
-// </video>
-// <script>
-// var myVideo = document.getElementById("myVid");
-// function playVideo() {
-//  myVideo.play();
-// }
-
-
 var audio = new Audio() // used this source: https://www.developphp.com/lib/JavaScript/Audio
-
+let myName = "emma anderson"
+let correctLetters = 0
+let repeats = 0
 
 // used this source: https://stackoverflow.com/a/48855598
 document.addEventListener("keypress", function onEvent(event) {
-  var myVideo = document.getElementById("myVid");
+  console.log(repeats)
+
+  var video = document.getElementById("myVid");
+  setupVideo()
 
   let userKey = event.key
   audio.pause();
 
-  if (userKey === myName[userCount]) {
-    audio.pause();
-    console.log(true)
-    document.getElementById('secondBody').innerHTML = getLettersAtIndex([userCount])
-    audio.src = soundbites[userCount];
+  // if user key matches the correct letter
+  if (userKey === myName[correctLetters]) {
+    // display correct letter on page
+    document.getElementById('secondBody').innerHTML = getLettersAtIndex([correctLetters])
+
+    // load the next audio file
+    audio.src = soundbites[correctLetters];
+
+    // play the audio and video
     audio.play();
-    myVideo.play();
-    userCount += 1
-  } else {
-    console.log(false)
-    document.getElementById('secondBody').innerHTML = "<span style='font-size: 20px; color: #D9A443'>Whoops! Try again.</span>"
-    userCount = 0
-    myVideo.pause();
+    video.play();
+
+    // add timed listener so audio pauses after each keypress
+    video.addEventListener("timeupdate", pauseVideo); // used this source: https://stackoverflow.com/a/53924299
+
+    // update the count of correctLetters
+    correctLetters += 1
   }
 
+  // if user's key press is incorrect
+  else {
+    // replace innerHTML with Try Again message
+    document.getElementById('secondBody').innerHTML = "<span style='font-size: 20px; color: #D9A443'>Whoops! Try again.</span>"
+    correctLetters = 0
+    repeats = 0
+    video.pause();
+  }
+
+
+  function pauseVideo(e) {
+    if (correctLetters < 13) {
+      video.pause();
+    }
+    video.removeEventListener("timeupdate", pauseVideo);
+  }
+
+  function setupVideo() {
+    video.onended = function() {
+      if (correctLetters == 13 && repeats == 0) {
+        video.play();
+        setTimeout(function(){ video.pause(); }, 2000)
+        repeats += 1
+      }
+    };
+  }
+  
 });
+
 
 function getLettersAtIndex(index) {
   result = ""
   for (i=0; i<=index; i++){
       result += letters[i]
-      // console.log(result)
     }
   return result
 }
