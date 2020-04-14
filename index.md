@@ -11,16 +11,13 @@ I am an iOS engineer studying Human-Computer Interaction at UC Irvine. On the si
 Feel free to reach out either through [Instagram](https://www.instagram.com/hapa.girl/) or [LinkedIn](https://www.linkedin.com/in/emma6pv/). I love talking about tech ethics, Steve Buscemi, and vinyl records. Let's chat!
 
 
-## INFORMATICS 190: Computer Audio and Music Programming
+## INF 190: Computer Audio and Music Programming
 
-Included in this section are my projects for INF 190. The class focuses on programming for sound and music applications.
+Included in this section are my projects for Informatics 190. The class focuses on programming for sound and music applications.
 
-### Week 3
+* Week 3 - Type your name to play sounds
+* Week 4 - ???
 
-test
+## Camp Tenacity: An iOS App for Mindful Breathing
 
-## Header 2
-
-> This is a blockquote following a header.
->
-> When something is important enough, you do it even if the odds are not in your favor.
+Coming soon. 
