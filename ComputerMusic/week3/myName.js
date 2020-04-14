@@ -38,8 +38,6 @@ let repeats = 0
 
 // used this source: https://stackoverflow.com/a/48855598
 document.addEventListener("keypress", function onEvent(event) {
-  console.log(repeats)
-
   var video = document.getElementById("myVid");
   setupVideo()
 
@@ -75,6 +73,7 @@ document.addEventListener("keypress", function onEvent(event) {
   }
 
 
+  // pause the video in between keystrokes
   function pauseVideo(e) {
     if (correctLetters < 13) {
       video.pause();
@@ -82,6 +81,7 @@ document.addEventListener("keypress", function onEvent(event) {
     video.removeEventListener("timeupdate", pauseVideo);
   }
 
+  // if the video ends prematurely, play it for another 2 seconds
   function setupVideo() {
     video.onended = function() {
       if (correctLetters == 13 && repeats == 0) {
@@ -91,7 +91,7 @@ document.addEventListener("keypress", function onEvent(event) {
       }
     };
   }
-  
+
 });
 
 
