@@ -11,9 +11,13 @@ I am an iOS engineer studying Human-Computer Interaction at UC Irvine. On the si
 Feel free to reach out either through [Instagram](https://www.instagram.com/hapa.girl/) or [LinkedIn](https://www.linkedin.com/in/emma6pv/). I love talking about tech ethics, Steve Buscemi, and vinyl records. Let's chat!
 
 
-# Header 1
+## INFORMATICS 190: Computer Audio and Music Programming
 
-This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
+Included in this section are my projects for INF 190. The class focuses on programming for sound and music applications.
+
+### Week 3
+
+test
 
 ## Header 2
 
