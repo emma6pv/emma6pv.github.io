@@ -45,6 +45,7 @@ class Note {
  }
 
  play() {
+   console.log("play note");
    const attackTime = 0;
    const decayTime = 2.5;
    const sustainValue = 0.4;

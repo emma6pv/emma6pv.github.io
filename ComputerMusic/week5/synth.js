@@ -22,12 +22,14 @@ document.addEventListener("keydown", function onEvent(event){
   let userKey = event.key;
 
   if (userKey === "e") {
+    cosole.log("e key is pressed");
     notes["E3b"].play();
     notes["G3"].play();
     notes["B3b"].play();
   }
 
   if (userKey === "o") {
+    cosole.log("o key is pressed");
     notes["D3"].play();
     notes["F3"].play();
     notes["A3"].play();
@@ -35,6 +37,7 @@ document.addEventListener("keydown", function onEvent(event){
   }
 
   if (userKey === "m") {
+    cosole.log("m key is pressed");
     notes["B3b"].play();
     notes["D3"].play();
     notes["F3"].play();
