@@ -23,7 +23,9 @@ document.addEventListener("keydown", function onEvent(event){
 
   if (userKey === "e") {
     console.log("e key is pressed");
-    notes["E3b"].play();
+    //notes["E3b"].play();
+    newNote = new Note(audioCtx, 155.56);
+    newNote.play();
     notes["G3"].play();
     notes["B3b"].play();
   }
