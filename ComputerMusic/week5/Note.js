@@ -1,10 +1,11 @@
+
+// The Note class is modeled after https://css-tricks.com/introduction-web-audio-api/#article-header-id-4
 class Note {
 
-// credit to https://css-tricks.com/introduction-web-audio-api/#article-header-id-4
-
-  constructor(context, frequency) {
+  constructor(context, frequency, gainValue) {
      this.context = context;
      this.frequency = frequency;
+     this.gainValue = gainValue;
    }
 
  init() {
@@ -30,38 +31,46 @@ class Note {
    this.oscillator.detune.value = 20;
    this.oscillator.type = "sawtooth";
 
-   this.oscillatorGain = this.context.createGain();
-   this.oscillatorGain.gain.value = 0.1;
-   this.oscillator.connect(this.oscillatorGain);
+   this.input = this.context.createGain();
+   this.output = this.context.createGain();
 
-   this.oscillatorGain.connect(this.chorus);
-   //this.oscillatorGain.connect(this.filter);
+   this.oscillator.connect(this.input);
 
-   //this.chorus.connect(this.context.destination);
+   this.input.connect(this.chorus);
+   this.chorus.connect(this.output);
 
-   this.chorus.connect(this.filter);
-   this.filter.connect(this.context.destination);
+   this.input.connect(this.filter);
+   this.filter.connect(this.output);
 
+   this.input.gain.value = this.gainValue;
+   console.log(this.gainValue);
+   this.output.connect(this.context.destination);
  }
 
+
  play() {
-   console.log("play note");
    const attackTime = 0;
    const decayTime = 2.5;
    const sustainValue = 0.4;
-   const releaseTime = 2.3;
 
    this.init();
    this.oscillator.start();
 
    // attack
-   this.oscillatorGain.gain.setValueAtTime(0, this.context.currentTime);
-   this.oscillatorGain.gain.linearRampToValueAtTime(1, this.context.currentTime + attackTime);
-   this.oscillatorGain.gain.linearRampToValueAtTime(sustainValue, this.context.currentTime + attackTime + decayTime);
+   this.output.gain.setValueAtTime(0, this.context.currentTime);
+   this.output.gain.linearRampToValueAtTime(1, this.context.currentTime + attackTime);
+   this.output.gain.linearRampToValueAtTime(sustainValue, this.context.currentTime + attackTime + decayTime);
+}
 
+release() {
+   const releaseTime = 2.3;
    // release
-   this.oscillatorGain.gain.linearRampToValueAtTime(0, this.context.currentTime + releaseTime);
+   this.output.gain.linearRampToValueAtTime(0, this.context.currentTime + releaseTime);
    this.oscillator.stop(this.context.currentTime + releaseTime);
- }
+}
+
+adjustGain(gainValue) {
+  this.gainValue = gainValue;
+}
 
 }

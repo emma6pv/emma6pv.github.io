@@ -1,0 +1,103 @@
+
+.blackKey {
+  height: 110px;
+  width: 30px;
+  background-color: #1C418C;
+  border-radius: 2px;
+  margin-bottom: 30px;
+  margin-top: 0px;
+  position:absolute;
+  margin-left: 37px;
+  float: left;
+}
+
+.blackKeyLabel {
+  height: 30px;
+  width: 30px;
+  margin-top: 3px;
+  margin-left:0px;
+  font-family: "Helvetica";
+  font-size: 16px;
+  text-align: center;
+  color: white;
+}
+
+.blackNoteLabel {
+  height: 20px;
+  width: 30px;
+  margin-top: 65px;
+  margin-left:0px;
+  font-family: "Georgia";
+  font-size: 13px;
+  text-align: center;
+  color: black;
+}
+
+.whiteKey {
+  height: 230px;
+  width: 50px;
+  background-color: #F2C2C2;
+  border-radius: 2px;
+  margin-bottom: 30px;
+  margin-top: 0px;
+  float: left;
+  margin-right: 5px;
+  left: 0px;
+  position: relative;
+}
+
+.whiteKeyLabel {
+  height: 30px;
+  width: 30px;
+  margin-top: 0px;
+  margin-left:10px;
+  font-family: "Helvetica";
+  font-size: 18px;
+  text-align: center;
+}
+
+.whiteNoteLabel {
+  height: 30px;
+  width: 30px;
+  margin-top: 170px;
+  margin-left:10px;
+  font-family: "Georgia";
+  font-size: 16px;
+  text-align: center;
+  color: white;
+}
+
+.keyboardContainer {
+  height: 230px;
+  border-radius: 2px;
+  width: 605px;
+  margin-top: 40px;
+  position: relative;
+}
+
+
+
+body {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  background-color: pink; /* Green */
+  border: none;
+  border-radius: 10px;
+  color: white;
+  padding: 15px 32px;
+  width: 100px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 0.4s;
+}
+
+.button:hover {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
