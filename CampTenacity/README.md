@@ -1,4 +1,4 @@
-![](https://media.github.uci.edu/user/814/files/eaa28f00-79cd-11ea-8ce3-37de395501cd)
+![](https://user-images.githubusercontent.com/8029411/80661120-91fd6980-8a42-11ea-9744-28d3f7f9a1a2.png)
 
 
 ## Introduction
@@ -19,13 +19,11 @@ Through our development we added the following features:
 
 ## Mobile Application
 
-![](https://media.github.uci.edu/user/814/files/8df4a380-79d0-11ea-9a5b-429d89ed8eab)
+![](https://user-images.githubusercontent.com/8029411/80661175-c113db00-8a42-11ea-8451-3bbfb2887908.png)
 
 ## Watch Application
 
-![watch](https://media.github.uci.edu/user/814/files/d57b2f80-79d0-11ea-9ab0-785dc7dbf5ad)
-
-
+![](https://user-images.githubusercontent.com/8029411/80661213-e1dc3080-8a42-11ea-975e-883b74c45d56.png)
 
 
 ## Acknowledgements
