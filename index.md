@@ -4,7 +4,7 @@ layout: default
 
 **Welcome to my GitHub Page! My name's Emma.**
 
-I am an iOS engineer studying Human-Computer Interaction at UC Irvine. On the side, I host a funk & soul radio show [The Groove](https://kuci.org/wp/shows/the-groove/). I also make zines, some of which have been [archived](https://ls2pac.lapl.org/?section=resource&resourceid=1851847881) in the Los Angeles Public Library. 
+I am an iOS engineer studying Human-Computer Interaction at UC Irvine. On the side, I host a funk & soul radio show [The Groove](https://kuci.org/wp/shows/the-groove/). I also make zines, some of which have been [archived](https://ls2pac.lapl.org/?section=resource&resourceid=1851847881) in the Los Angeles Public Library.
 
 **Below you'll find some of my latest projects.**
 
@@ -16,8 +16,8 @@ Feel free to reach out either through [Instagram](https://www.instagram.com/hapa
 Included in this section are my projects for Informatics 190. The class covers programming for sound and music applications.
 
 * Week 3 - [Type your name to play sounds](https://emma6pv.github.io/ComputerMusic/week3/myName.html)
-* Week 4 - ???
+* Week 4 - [Build a Synthesizer](https://emma6pv.github.io/ComputerMusic/week5/synthesizer.html)
 
 ## Camp Tenacity: An iOS App for Mindful Breathing
 
-Coming soon. 
+Coming soon.
