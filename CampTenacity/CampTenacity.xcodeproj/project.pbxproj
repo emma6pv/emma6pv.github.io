@@ -1,0 +1,801 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3E438C9C23F219FE0095C18B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E438C9B23F219FE0095C18B /* Assets.xcassets */; };
+		3E438CA323F219FF0095C18B /* TenacityWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3E438CA223F219FF0095C18B /* TenacityWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		3E438CAA23F219FF0095C18B /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E438CA923F219FF0095C18B /* ExtensionDelegate.swift */; };
+		3E438CAC23F219FF0095C18B /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E438CAB23F219FF0095C18B /* NotificationController.swift */; };
+		3E438CAE23F21A060095C18B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E438CAD23F21A060095C18B /* Assets.xcassets */; };
+		3E438CB323F21A060095C18B /* TenacityWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 3E438C9623F219F10095C18B /* TenacityWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B506DB0723DBD62C00EF744D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B506DB0623DBD62C00EF744D /* AppDelegate.swift */; };
+		B506DB0923DBD62C00EF744D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B506DB0823DBD62C00EF744D /* SceneDelegate.swift */; };
+		B506DB0B23DBD62C00EF744D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B506DB0A23DBD62C00EF744D /* ViewController.swift */; };
+		B506DB0E23DBD62C00EF744D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B506DB0C23DBD62C00EF744D /* Main.storyboard */; };
+		B506DB1023DBD62F00EF744D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B506DB0F23DBD62F00EF744D /* Assets.xcassets */; };
+		B506DB1323DBD62F00EF744D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B506DB1123DBD62F00EF744D /* LaunchScreen.storyboard */; };
+		B53F56AA23E66B3E00DD1AAD /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53F56A923E66B3E00DD1AAD /* ActionViewController.swift */; };
+		B54BE32E23DBE65A008D528A /* CampViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54BE32D23DBE65A008D528A /* CampViewController.swift */; };
+		B54BE33523DC1221008D528A /* Quicksand-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B54BE33023DC1221008D528A /* Quicksand-Light.ttf */; };
+		B54BE33623DC1221008D528A /* Quicksand-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B54BE33123DC1221008D528A /* Quicksand-Medium.ttf */; };
+		B54BE33723DC1221008D528A /* Quicksand-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B54BE33223DC1221008D528A /* Quicksand-Regular.ttf */; };
+		B54BE33823DC1221008D528A /* Quicksand-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B54BE33323DC1221008D528A /* Quicksand-SemiBold.ttf */; };
+		B54BE33923DC1221008D528A /* Quicksand-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B54BE33423DC1221008D528A /* Quicksand-Bold.ttf */; };
+		B54BE33E23DC2AD4008D528A /* DeviceList.plist in Resources */ = {isa = PBXBuildFile; fileRef = B54BE33B23DC2AD4008D528A /* DeviceList.plist */; };
+		B54BE33F23DC2AD4008D528A /* Hardware.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54BE33C23DC2AD4008D528A /* Hardware.swift */; };
+		B54BE34023DC2AD4008D528A /* DeviceGuru.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54BE33D23DC2AD4008D528A /* DeviceGuru.swift */; };
+		B54BE34223DC2B21008D528A /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54BE34123DC2B21008D528A /* FontManager.swift */; };
+		B54BE34823DD13F7008D528A /* TimelineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54BE34723DD13F7008D528A /* TimelineTableViewCell.swift */; };
+		B563123B23F87B5300CACC55 /* OrangeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B563123A23F87B5300CACC55 /* OrangeButton.swift */; };
+		B570906E23E9478D002DE417 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B570906C23E9478D002DE417 /* User.swift */; };
+		B570907023E947AD002DE417 /* AchievementLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B570906F23E947AD002DE417 /* AchievementLevel.swift */; };
+		B5C9B36523F24348008229DC /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C9B36423F24348008229DC /* StatisticsView.swift */; };
+		B5C9B36723F24E12008229DC /* AchievementManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C9B36623F24E12008229DC /* AchievementManager.swift */; };
+		B5D1976024034067002B6511 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5D1975D24034027002B6511 /* Charts.framework */; };
+		B5D1976124034067002B6511 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B5D1975D24034027002B6511 /* Charts.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B570907223E9490F002DE417 /* ProgressRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = B570907123E9490F002DE417 /* ProgressRing.swift */; };
+		B570907C23EA373A002DE417 /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B570907B23EA373A002DE417 /* CircularProgressBar.swift */; };
+		B5A9FEDB2416F306005459A6 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A9FEDA2416F306005459A6 /* InterfaceController.swift */; };
+		B5A9FEDD2416F32E005459A6 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5A9FEDC2416F32E005459A6 /* Interface.storyboard */; };
+		B5EEC91B23E6586D00FABB35 /* MainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EEC91A23E6586D00FABB35 /* MainTabBar.swift */; };
+		B5EEC91D23E6599300FABB35 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EEC91C23E6599300FABB35 /* StatsViewController.swift */; };
+		B5EEC91F23E659A000FABB35 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EEC91E23E659A000FABB35 /* HomeViewController.swift */; };
+		B5EEC92223E659F600FABB35 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EEC92123E659F600FABB35 /* AccountViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3E438CA423F219FF0095C18B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B506DAFB23DBD62C00EF744D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3E438CA123F219FF0095C18B;
+			remoteInfo = "TenacityWatch Extension";
+		};
+		3E438CB123F21A060095C18B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B506DAFB23DBD62C00EF744D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3E438C9523F219F00095C18B;
+			remoteInfo = TenacityWatch;
+		};
+		B5D1975C24034027002B6511 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B5D1975724034027002B6511 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 65AD9E95D9ED4DC0BD73A743;
+			remoteInfo = Charts;
+		};
+		B5D1975E24034027002B6511 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B5D1975724034027002B6511 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1CBBC58C6CE1EBEE9852CE41;
+			remoteInfo = ChartsTests;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3E438CB423F21A060095C18B /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				3E438CB323F21A060095C18B /* TenacityWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E438CB723F21A060095C18B /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				3E438CA323F219FF0095C18B /* TenacityWatch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B56D282423F4D90E0063127E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B5D1976124034067002B6511 /* Charts.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		3E438C9623F219F10095C18B /* TenacityWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TenacityWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E438C9B23F219FE0095C18B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3E438C9D23F219FE0095C18B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3E438CA223F219FF0095C18B /* TenacityWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "TenacityWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E438CA923F219FF0095C18B /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		3E438CAB23F219FF0095C18B /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		3E438CAD23F21A060095C18B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3E438CAF23F21A060095C18B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3E438CB023F21A060095C18B /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		B506DB0323DBD62C00EF744D /* CampTenacity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CampTenacity.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B506DB0623DBD62C00EF744D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B506DB0823DBD62C00EF744D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		B506DB0A23DBD62C00EF744D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B506DB0D23DBD62C00EF744D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B506DB0F23DBD62F00EF744D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B506DB1223DBD62F00EF744D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B506DB1423DBD62F00EF744D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B53F56A923E66B3E00DD1AAD /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
+		B54BE32D23DBE65A008D528A /* CampViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampViewController.swift; sourceTree = "<group>"; };
+		B54BE33023DC1221008D528A /* Quicksand-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Light.ttf"; sourceTree = "<group>"; };
+		B54BE33123DC1221008D528A /* Quicksand-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Medium.ttf"; sourceTree = "<group>"; };
+		B54BE33223DC1221008D528A /* Quicksand-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Regular.ttf"; sourceTree = "<group>"; };
+		B54BE33323DC1221008D528A /* Quicksand-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-SemiBold.ttf"; sourceTree = "<group>"; };
+		B54BE33423DC1221008D528A /* Quicksand-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Bold.ttf"; sourceTree = "<group>"; };
+		B54BE33B23DC2AD4008D528A /* DeviceList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DeviceList.plist; sourceTree = "<group>"; };
+		B54BE33C23DC2AD4008D528A /* Hardware.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hardware.swift; sourceTree = "<group>"; };
+		B54BE33D23DC2AD4008D528A /* DeviceGuru.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceGuru.swift; sourceTree = "<group>"; };
+		B54BE34123DC2B21008D528A /* FontManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
+		B54BE34723DD13F7008D528A /* TimelineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineTableViewCell.swift; sourceTree = "<group>"; };
+		B563123A23F87B5300CACC55 /* OrangeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrangeButton.swift; sourceTree = "<group>"; };
+		B570906C23E9478D002DE417 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		B570906F23E947AD002DE417 /* AchievementLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementLevel.swift; sourceTree = "<group>"; };
+		B5C9B36423F24348008229DC /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
+		B5C9B36623F24E12008229DC /* AchievementManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementManager.swift; sourceTree = "<group>"; };
+		B5D1975724034027002B6511 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "Charts-master/Charts.xcodeproj"; sourceTree = "<group>"; };
+		B570907123E9490F002DE417 /* ProgressRing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressRing.swift; sourceTree = "<group>"; };
+		B570907B23EA373A002DE417 /* CircularProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBar.swift; sourceTree = "<group>"; };
+		B5A9FEDA2416F306005459A6 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		B5A9FEDC2416F32E005459A6 /* Interface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Interface.storyboard; sourceTree = "<group>"; };
+		B5EEC91A23E6586D00FABB35 /* MainTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBar.swift; sourceTree = "<group>"; };
+		B5EEC91C23E6599300FABB35 /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
+		B5EEC91E23E659A000FABB35 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		B5EEC92123E659F600FABB35 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3E438C9F23F219FF0095C18B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B506DB0023DBD62C00EF744D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5D1976024034067002B6511 /* Charts.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3E438C9723F219F10095C18B /* TenacityWatch */ = {
+			isa = PBXGroup;
+			children = (
+				B5A9FEDC2416F32E005459A6 /* Interface.storyboard */,
+				3E438C9B23F219FE0095C18B /* Assets.xcassets */,
+				3E438C9D23F219FE0095C18B /* Info.plist */,
+			);
+			path = TenacityWatch;
+			sourceTree = "<group>";
+		};
+		3E438CA623F219FF0095C18B /* TenacityWatch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				B5A9FEDA2416F306005459A6 /* InterfaceController.swift */,
+				3E438CA923F219FF0095C18B /* ExtensionDelegate.swift */,
+				3E438CAB23F219FF0095C18B /* NotificationController.swift */,
+				3E438CAD23F21A060095C18B /* Assets.xcassets */,
+				3E438CAF23F21A060095C18B /* Info.plist */,
+				3E438CB023F21A060095C18B /* PushNotificationPayload.apns */,
+			);
+			path = "TenacityWatch Extension";
+			sourceTree = "<group>";
+		};
+		B506DAFA23DBD62C00EF744D = {
+			isa = PBXGroup;
+			children = (
+				B5D1975724034027002B6511 /* Charts.xcodeproj */,
+				B506DB0523DBD62C00EF744D /* CampTenacity */,
+				3E438C9723F219F10095C18B /* TenacityWatch */,
+				3E438CA623F219FF0095C18B /* TenacityWatch Extension */,
+				B506DB0423DBD62C00EF744D /* Products */,
+				B56D282123F4D90E0063127E /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B506DB0423DBD62C00EF744D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B506DB0323DBD62C00EF744D /* CampTenacity.app */,
+				3E438C9623F219F10095C18B /* TenacityWatch.app */,
+				3E438CA223F219FF0095C18B /* TenacityWatch Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B506DB0523DBD62C00EF744D /* CampTenacity */ = {
+			isa = PBXGroup;
+			children = (
+				B54BE33A23DC2ACA008D528A /* DeviceGuru */,
+				B506DB0623DBD62C00EF744D /* AppDelegate.swift */,
+				B506DB0823DBD62C00EF744D /* SceneDelegate.swift */,
+				B506DB0A23DBD62C00EF744D /* ViewController.swift */,
+				B5EEC91A23E6586D00FABB35 /* MainTabBar.swift */,
+				B5EEC92023E659BF00FABB35 /* Screens */,
+				B506DB0C23DBD62C00EF744D /* Main.storyboard */,
+				B506DB0F23DBD62F00EF744D /* Assets.xcassets */,
+				B570906C23E9478D002DE417 /* User.swift */,
+				B570906F23E947AD002DE417 /* AchievementLevel.swift */,
+				B5C9B36623F24E12008229DC /* AchievementManager.swift */,
+				B5C9B36423F24348008229DC /* StatisticsView.swift */,
+				B570907B23EA373A002DE417 /* CircularProgressBar.swift */,
+				B563123A23F87B5300CACC55 /* OrangeButton.swift */,
+				B54BE32F23DC11E5008D528A /* fonts */,
+				B506DB1123DBD62F00EF744D /* LaunchScreen.storyboard */,
+				B506DB1423DBD62F00EF744D /* Info.plist */,
+				B54BE34123DC2B21008D528A /* FontManager.swift */,
+			);
+			path = CampTenacity;
+			sourceTree = "<group>";
+		};
+		B54BE32F23DC11E5008D528A /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				B54BE33423DC1221008D528A /* Quicksand-Bold.ttf */,
+				B54BE33023DC1221008D528A /* Quicksand-Light.ttf */,
+				B54BE33123DC1221008D528A /* Quicksand-Medium.ttf */,
+				B54BE33223DC1221008D528A /* Quicksand-Regular.ttf */,
+				B54BE33323DC1221008D528A /* Quicksand-SemiBold.ttf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
+		B54BE33A23DC2ACA008D528A /* DeviceGuru */ = {
+			isa = PBXGroup;
+			children = (
+				B54BE33D23DC2AD4008D528A /* DeviceGuru.swift */,
+				B54BE33B23DC2AD4008D528A /* DeviceList.plist */,
+				B54BE33C23DC2AD4008D528A /* Hardware.swift */,
+			);
+			path = DeviceGuru;
+			sourceTree = "<group>";
+		};
+		B56D282123F4D90E0063127E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B5D1975824034027002B6511 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B5D1975D24034027002B6511 /* Charts.framework */,
+				B5D1975F24034027002B6511 /* ChartsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B5EEC92023E659BF00FABB35 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				B5EEC91C23E6599300FABB35 /* StatsViewController.swift */,
+				B53F56A923E66B3E00DD1AAD /* ActionViewController.swift */,
+				B5EEC91E23E659A000FABB35 /* HomeViewController.swift */,
+				B54BE32D23DBE65A008D528A /* CampViewController.swift */,
+				B5EEC92123E659F600FABB35 /* AccountViewController.swift */,
+				B54BE34723DD13F7008D528A /* TimelineTableViewCell.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3E438C9523F219F00095C18B /* TenacityWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3E438CBB23F21A060095C18B /* Build configuration list for PBXNativeTarget "TenacityWatch" */;
+			buildPhases = (
+				3E438C9423F219F00095C18B /* Resources */,
+				3E438CB723F21A060095C18B /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3E438CA523F219FF0095C18B /* PBXTargetDependency */,
+			);
+			name = TenacityWatch;
+			productName = TenacityWatch;
+			productReference = 3E438C9623F219F10095C18B /* TenacityWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		3E438CA123F219FF0095C18B /* TenacityWatch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3E438CBA23F21A060095C18B /* Build configuration list for PBXNativeTarget "TenacityWatch Extension" */;
+			buildPhases = (
+				3E438C9E23F219FF0095C18B /* Sources */,
+				3E438C9F23F219FF0095C18B /* Frameworks */,
+				3E438CA023F219FF0095C18B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "TenacityWatch Extension";
+			productName = "TenacityWatch Extension";
+			productReference = 3E438CA223F219FF0095C18B /* TenacityWatch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+		B506DB0223DBD62C00EF744D /* CampTenacity */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B506DB1723DBD62F00EF744D /* Build configuration list for PBXNativeTarget "CampTenacity" */;
+			buildPhases = (
+				B506DAFF23DBD62C00EF744D /* Sources */,
+				B506DB0023DBD62C00EF744D /* Frameworks */,
+				B506DB0123DBD62C00EF744D /* Resources */,
+				3E438CB423F21A060095C18B /* Embed Watch Content */,
+				B56D282423F4D90E0063127E /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3E438CB223F21A060095C18B /* PBXTargetDependency */,
+			);
+			name = CampTenacity;
+			productName = CampTenacity;
+			productReference = B506DB0323DBD62C00EF744D /* CampTenacity.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B506DAFB23DBD62C00EF744D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = Tenacity;
+				TargetAttributes = {
+					3E438C9523F219F00095C18B = {
+						CreatedOnToolsVersion = 11.3;
+					};
+					3E438CA123F219FF0095C18B = {
+						CreatedOnToolsVersion = 11.3;
+					};
+					B506DB0223DBD62C00EF744D = {
+						CreatedOnToolsVersion = 11.3;
+					};
+				};
+			};
+			buildConfigurationList = B506DAFE23DBD62C00EF744D /* Build configuration list for PBXProject "CampTenacity" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B506DAFA23DBD62C00EF744D;
+			productRefGroup = B506DB0423DBD62C00EF744D /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = B5D1975824034027002B6511 /* Products */;
+					ProjectRef = B5D1975724034027002B6511 /* Charts.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				B506DB0223DBD62C00EF744D /* CampTenacity */,
+				3E438C9523F219F00095C18B /* TenacityWatch */,
+				3E438CA123F219FF0095C18B /* TenacityWatch Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		B5D1975D24034027002B6511 /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = B5D1975C24034027002B6511 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B5D1975F24034027002B6511 /* ChartsTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ChartsTests.xctest;
+			remoteRef = B5D1975E24034027002B6511 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3E438C9423F219F00095C18B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5A9FEDD2416F32E005459A6 /* Interface.storyboard in Resources */,
+				3E438C9C23F219FE0095C18B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E438CA023F219FF0095C18B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E438CAE23F21A060095C18B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B506DB0123DBD62C00EF744D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B506DB1323DBD62F00EF744D /* LaunchScreen.storyboard in Resources */,
+				B54BE33723DC1221008D528A /* Quicksand-Regular.ttf in Resources */,
+				B506DB1023DBD62F00EF744D /* Assets.xcassets in Resources */,
+				B506DB0E23DBD62C00EF744D /* Main.storyboard in Resources */,
+				B54BE33523DC1221008D528A /* Quicksand-Light.ttf in Resources */,
+				B54BE33823DC1221008D528A /* Quicksand-SemiBold.ttf in Resources */,
+				B54BE33623DC1221008D528A /* Quicksand-Medium.ttf in Resources */,
+				B54BE33923DC1221008D528A /* Quicksand-Bold.ttf in Resources */,
+				B54BE33E23DC2AD4008D528A /* DeviceList.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3E438C9E23F219FF0095C18B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5A9FEDB2416F306005459A6 /* InterfaceController.swift in Sources */,
+				3E438CAC23F219FF0095C18B /* NotificationController.swift in Sources */,
+				3E438CAA23F219FF0095C18B /* ExtensionDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B506DAFF23DBD62C00EF744D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5EEC91B23E6586D00FABB35 /* MainTabBar.swift in Sources */,
+				B563123B23F87B5300CACC55 /* OrangeButton.swift in Sources */,
+				B54BE34823DD13F7008D528A /* TimelineTableViewCell.swift in Sources */,
+				B5EEC92223E659F600FABB35 /* AccountViewController.swift in Sources */,
+				B53F56AA23E66B3E00DD1AAD /* ActionViewController.swift in Sources */,
+				B54BE34023DC2AD4008D528A /* DeviceGuru.swift in Sources */,
+				B5C9B36523F24348008229DC /* StatisticsView.swift in Sources */,
+				B506DB0B23DBD62C00EF744D /* ViewController.swift in Sources */,
+				B54BE34223DC2B21008D528A /* FontManager.swift in Sources */,
+				B506DB0723DBD62C00EF744D /* AppDelegate.swift in Sources */,
+				B54BE33F23DC2AD4008D528A /* Hardware.swift in Sources */,
+				B5EEC91F23E659A000FABB35 /* HomeViewController.swift in Sources */,
+				B506DB0923DBD62C00EF744D /* SceneDelegate.swift in Sources */,
+				B5EEC91D23E6599300FABB35 /* StatsViewController.swift in Sources */,
+				B5C9B36723F24E12008229DC /* AchievementManager.swift in Sources */,
+				B570907C23EA373A002DE417 /* CircularProgressBar.swift in Sources */,
+				B570906E23E9478D002DE417 /* User.swift in Sources */,
+				B570907023E947AD002DE417 /* AchievementLevel.swift in Sources */,
+				B54BE32E23DBE65A008D528A /* CampViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3E438CA523F219FF0095C18B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3E438CA123F219FF0095C18B /* TenacityWatch Extension */;
+			targetProxy = 3E438CA423F219FF0095C18B /* PBXContainerItemProxy */;
+		};
+		3E438CB223F21A060095C18B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3E438C9523F219F00095C18B /* TenacityWatch */;
+			targetProxy = 3E438CB123F21A060095C18B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B506DB0C23DBD62C00EF744D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B506DB0D23DBD62C00EF744D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B506DB1123DBD62F00EF744D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B506DB1223DBD62F00EF744D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3E438CB523F21A060095C18B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				IBSC_MODULE = TenacityWatch_Extension;
+				INFOPLIST_FILE = TenacityWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = ea.CampTenacity.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
+			};
+			name = Debug;
+		};
+		3E438CB623F21A060095C18B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				IBSC_MODULE = TenacityWatch_Extension;
+				INFOPLIST_FILE = TenacityWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = ea.CampTenacity.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
+			};
+			name = Release;
+		};
+		3E438CB823F21A060095C18B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "TenacityWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ea.CampTenacity.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
+			};
+			name = Debug;
+		};
+		3E438CB923F21A060095C18B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "TenacityWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ea.CampTenacity.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
+			};
+			name = Release;
+		};
+		B506DB1523DBD62F00EF744D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B506DB1623DBD62F00EF744D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B506DB1823DBD62F00EF744D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CampTenacity/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ea.CampTenacity;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B506DB1923DBD62F00EF744D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CampTenacity/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ea.CampTenacity;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3E438CBA23F21A060095C18B /* Build configuration list for PBXNativeTarget "TenacityWatch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E438CB823F21A060095C18B /* Debug */,
+				3E438CB923F21A060095C18B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3E438CBB23F21A060095C18B /* Build configuration list for PBXNativeTarget "TenacityWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E438CB523F21A060095C18B /* Debug */,
+				3E438CB623F21A060095C18B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B506DAFE23DBD62C00EF744D /* Build configuration list for PBXProject "CampTenacity" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B506DB1523DBD62F00EF744D /* Debug */,
+				B506DB1623DBD62F00EF744D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B506DB1723DBD62F00EF744D /* Build configuration list for PBXNativeTarget "CampTenacity" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B506DB1823DBD62F00EF744D /* Debug */,
+				B506DB1923DBD62F00EF744D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B506DAFB23DBD62C00EF744D /* Project object */;
+}
