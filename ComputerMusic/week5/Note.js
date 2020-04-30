@@ -10,12 +10,11 @@ class Note {
 
  init() {
    this.oscillator = this.context.createOscillator();
-   this.tuna = new Tuna(this.context);
+   this.tuna = new Tuna(this.context); // https://github.com/Theodeus/tuna
 
    this.chorus = new this.tuna.Chorus({
      rate: 1.5,
      feedback: 0.5,
-     //delay: 0.0045,
      delay: 0.0045,
      bypass: 0
    });
@@ -56,7 +55,7 @@ class Note {
    this.init();
    this.oscillator.start();
 
-   // attack
+   // attack, decay, sustain
    this.output.gain.setValueAtTime(0, this.context.currentTime);
    this.output.gain.linearRampToValueAtTime(1, this.context.currentTime + attackTime);
    this.output.gain.linearRampToValueAtTime(sustainValue, this.context.currentTime + attackTime + decayTime);

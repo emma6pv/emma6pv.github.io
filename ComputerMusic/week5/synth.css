@@ -84,20 +84,22 @@ body {
 }
 
 .button {
-  background-color: pink; /* Green */
+  background-color: #F2C2C2;
+  height: 50px;
   border: none;
   border-radius: 10px;
   color: white;
-  padding: 15px 32px;
+  padding: 15px 14px;
   width: 100px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
-  transition-duration: 0.4s;
+  margin-right: 15px;
+  font-size: 14px;
+  transition-duration: 0.3s;
 }
 
 .button:hover {
-  background-color: #4CAF50; /* Green */
+  background-color: #F2528D;
   color: white;
 }
