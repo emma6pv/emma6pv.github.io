@@ -20,4 +20,4 @@ Included in this section are my projects for Informatics 190. The class covers p
 
 ## Camp Tenacity: An iOS App for Mindful Breathing
 
-Coming soon.
+Camp Tenacity is an iPhone and Watch app that encourages mindfulness through breathing exercises and games. View the repository [here](https://github.com/emma6pv/emma6pv.github.io/tree/master/CampTenacity). 
