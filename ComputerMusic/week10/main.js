@@ -1,61 +1,50 @@
 
 // https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Advanced_techniques
-// for cross browser compatibility
 const AudioContext = window.AudioContext || window.webkitAudioContext;
 const audioCtx = new AudioContext();
+const rawPath = 'https://raw.githubusercontent.com/emma6pv/emma6pv.github.io/master/ComputerMusic/week10/TR-808/'
 
 
-const drumType = {
-   crash: 1,
-   tomHigh: 2,
-   tomMed: 3,
-   tomLow: 4,
-   hatClose: 5,
-   hatOpen: 6,
-   snare: 7,
-   kick: 8,
-   clap: 9,
-   cowbell: 10,
-   conga: 11,
-   maraca: 12
-};
+//var crash = new Drum(getPath("crash.wav"), [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]);
+//var clap = new Drum(getPath("clap.wav"), [1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0]);
 
 
-drums = [
-  new Drum(drumType.crash, "/TR-808/crash.wav"),
-  new Drum(drumType.clap, "/TR-808/clap.wav"),
-]
+let buffer;
+let secondsPerBeat = 60.0 / 120; //tempo
 
+window.addEventListener("click", function(event) {
+  var clap = new Drum("clap.wav", [1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0], audioCtx);
 
-// credit = https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Advanced_techniques
-async function getFile(audioContext, filepath) {
-  const response = await fetch(filepath);
-  const arrayBuffer = await response.arrayBuffer();
-  const audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
-  return audioBuffer;
-}
+  clap.setupSample()
+      .then((sample) => {
+        buffer = sample;
+  });
 
-// credit = https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Advanced_techniques
-async function setupSample() {
-    const filePath = 'TR-808/crash.wav';
-    const sample = await getFile(audioCtx, filePath);
-    return sample;
-}
-
-setupSample()
-    .then((sample) => {
-        // sample is our buffered file
-        // ...
+  playSequence(clap);
+  setInterval(function(){ playSequence(clap); }, secondsPerBeat*4000);
 });
 
-function playSample(audioContext, audioBuffer) {
-    const sampleSource = audioContext.createBufferSource();
-    sampleSource.buffer = audioBuffer;
-    sampleSource.playbackRate.setValueAtTime(playbackRate, audioCtx.currentTime);
-    sampleSource.connect(audioContext.destination)
-    sampleSource.start();
-    return sampleSource;
+function playSequence(drum) {
+  let seq = drum.getSequence();
+  var  time = 10;
+
+  for (let i = 0; i < 16; i++){
+    if (seq[i] == 1) {
+      console.log(true);
+      setTimeout(function(){ drum.playSample(audioCtx, buffer); }, time);
+    }
+    time += secondsPerBeat*1000/4;
+  }
 }
 
-let dtmf;
-playSample(audioCtx, dtmf);
+// function playSomething(){
+//   let seq = [1,1,1,1,0,1,1,0,1,1,1,1,0,1,1,0];
+//   var  time = 0.0;
+//
+//   for (let i = 0; i < 16; i++){
+//     if (seq[i] == 1) {
+//       setTimeout(function(){ playSample(audioCtx, buffer); }, time);
+//     }
+//     time += secondsPerBeat*1000/4;
+//   }
+// }
