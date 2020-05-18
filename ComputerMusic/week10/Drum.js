@@ -10,8 +10,11 @@ class Drum {
     return this.sequence;
   }
 
+  updateSequence(newSeq){
+    this.sequence = newSeq;
+  }
+
   getPath(fileName){
-    console.log(rawPath);
     return rawPath + fileName
   }
 
