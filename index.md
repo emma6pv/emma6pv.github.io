@@ -17,6 +17,7 @@ Included in this section are my projects for Informatics 190. The class covers p
 
 * Week 3 - [Type your name to play sounds](https://emma6pv.github.io/ComputerMusic/week3/myName.html)
 * Week 4 - [Build a Synthesizer](https://emma6pv.github.io/ComputerMusic/week5/synthesizer.html)
+* Week 10 - [Final Project](https://emma6pv.github.io/ComputerMusic/week10/drumkit.html)
 
 ## Camp Tenacity: An iOS App for Mindful Breathing
 
