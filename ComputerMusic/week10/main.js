@@ -70,10 +70,14 @@ function printToConsole(msg){
   updateConsole();
 }
 
+function clearConsole() {
+  document.getElementById('consoleWindow').innerHTML = "";
+}
+
 
 /*
 |--------------------------------------------------------------------------
-| Event Handlers and User Input
+| Event Handlers
 |--------------------------------------------------------------------------
 |
 | ...
@@ -119,7 +123,19 @@ function handleKeyPress(e){
   }
 }
 
+/*
+|--------------------------------------------------------------------------
+| User Tutorial
+|--------------------------------------------------------------------------
+|
+| Handling of the user tutorial option given to the user
+| upon page launch.
+|
+|
+*/
+
 // Console handling for the initial launch message
+// asking if the user wants to take the tutorial
 function handleLaunchPrompt(userInput) {
   // If user said yes to the tutorial
   if (userSaidYes(userInput)) {
@@ -189,6 +205,26 @@ function handleTutorial(userInput) {
   }
 }
 
+function launchTutorial(){
+  let msg = "Let&apos;s start with something simple.<br>Try this: <span style='color: #EDEACC'>addDrum(clap, [1,0,0,0, 1,0,0,0, 1,0,0,0, 1,0,0,0])</span><br>"
+  printToConsole(msg);
+}
+
+function skipTutorial(){
+  let msg = "Okay! If you need help, use the Reference included below.<br>"
+  printToConsole(msg);
+}
+
+/*
+|--------------------------------------------------------------------------
+| User Input Handling
+|--------------------------------------------------------------------------
+|
+| Checking, displaying, and erasing of inputs from the user.
+|
+|
+*/
+
 function clearInput() {
   document.getElementById('consoleInput').value = "";
   event.preventDefault();
@@ -204,14 +240,17 @@ function displayErrorInput(userInput){
   printToConsole(msg);
 }
 
-function launchTutorial(){
-  let msg = "Let&apos;s start with something simple.<br>Try this: <span style='color: #EDEACC'>addDrum(clap, [1,0,0,0, 1,0,0,0, 1,0,0,0, 1,0,0,0])</span><br>"
-  printToConsole(msg);
+function userSaidYes(userInput){
+  return userInput.toLowerCase() == 'y';
 }
 
-function skipTutorial(){
-  let msg = "Okay! If you need help, use the Reference included below.<br>"
-  printToConsole(msg);
+function userSaidNo(userInput){
+  return userInput.toLowerCase() == 'n';
+}
+
+function enterKeyPressed(e){
+  var key=e.keyCode || e.which; // credit to https://stackoverflow.com/a/13987361
+  return key == 13
 }
 
 function isValidInput(userInput) {
@@ -233,19 +272,6 @@ function isValidInput(userInput) {
   let check4 = ["start()", "clear()", "stop()"].includes(userInput);
 
   return regex1.test(userInput) || regex2.test(userInput) || check3 || check4
-}
-
-function userSaidYes(userInput){
-  return userInput.toLowerCase() == 'y';
-}
-
-function userSaidNo(userInput){
-  return userInput.toLowerCase() == 'n';
-}
-
-function enterKeyPressed(e){
-  var key=e.keyCode || e.which; // credit to https://stackoverflow.com/a/13987361
-  return key == 13
 }
 
 /*
