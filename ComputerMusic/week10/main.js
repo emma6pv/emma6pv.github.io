@@ -7,8 +7,8 @@ var tempo = 120;
 var secondsPerBeat = 60.0 / tempo;
 
 // Drums
-var clap = new Drum("clap.wav", [1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0], audioCtx);
-var conga = new Drum("conga.wav", [0,1,1,0,0,1,1,0,0,1,1,0,0,1,1,0], audioCtx);
+var clap = new Drum("clap.wav", [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], audioCtx);
+var conga = new Drum("conga.wav", [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], audioCtx);
 var cowbell = new Drum("cowbell.wav", [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], audioCtx);
 var crash = new Drum("crash.wav", [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], audioCtx);
 var hatClose = new Drum("hatClose.wav", [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], audioCtx);
@@ -18,7 +18,7 @@ var maraca = new Drum("maraca.wav", [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], audioCtx)
 var snare = new Drum("snare.wav", [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], audioCtx);
 var tomHigh = new Drum("tomHigh.wav", [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], audioCtx);
 var tomLow = new Drum("tomLow.wav", [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], audioCtx);
-var tomMed = new Drum("tomMed.wav", [1,1,1,0,1,1,1,0,1,1,1,0,1,1,1,0], audioCtx);
+var tomMed = new Drum("tomMed.wav", [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], audioCtx);
 
 // Buffers
 let clapBuffer;
@@ -42,8 +42,48 @@ var consoleContents = ["Welcome to the console.<br>This is where you&apos;ll cod
 var isFirstLaunchOfConsole = true;
 var isTutorialMode = false;
 var tutorialStepNumber = 0;
+var isStartButtonOn = false;
+var isCurrentlyPlaying = false;
+
 setupSamples();
 updateConsole();
+
+
+function playAll(){
+  isCurrentlyPlaying = true;
+  play(conga, congaBuffer);
+  play(clap, clapBuffer);
+  play(cowbell, cowbellBuffer);
+  play(crash, crashBuffer);
+  play(hatClose, hatCloseBuffer);
+  play(hatOpen, hatOpenBuffer);
+  play(kick, kickBuffer);
+  play(maraca, maracaBuffer);
+  play(snare, snareBuffer);
+  play(tomHigh, tomHighBuffer);
+  play(tomLow, tomLowBuffer);
+  play(tomMed, tomMedBuffer);
+
+  let msg = "Now playing.<br>";
+  printToConsole(msg);
+}
+
+function stopAll() {
+  isCurrentlyPlaying = false;
+  stop(conga, congaBuffer);
+  stop(clap, clapBuffer);
+  stop(cowbell, cowbellBuffer);
+  stop(crash, crashBuffer);
+  stop(hatClose, hatCloseBuffer);
+  stop(hatOpen, hatOpenBuffer);
+  stop(kick, kickBuffer);
+  stop(maraca, maracaBuffer);
+  stop(snare, snareBuffer);
+  stop(tomHigh, tomHighBuffer);
+  stop(tomLow, tomLowBuffer);
+  stop(tomMed, tomMedBuffer);
+}
+
 
 /*
 |--------------------------------------------------------------------------
@@ -74,6 +114,91 @@ function clearConsole() {
   document.getElementById('consoleWindow').innerHTML = "";
 }
 
+/*
+|--------------------------------------------------------------------------
+| From the User to the Drum
+|--------------------------------------------------------------------------
+|
+| Core functions for translating the user commands to
+| actual drum commands within the code.
+|
+|
+*/
+
+// Determine which function to trigger based on the input
+function centralNavigation(userInput){
+  if (userInput.startsWith("addDrum")) {
+    str = (userInput.split("addDrum("))[1].split(',[');
+    drumType = str[0];
+    sequence = (str[1].replace('])', '').split(',')).map(Number);
+    userAddsDrum(drumType, sequence);
+  }
+  else if (userInput.startsWith("removeDrum")){
+    drumType = (userInput.split("removeDrum("))[1].split(',[')[0].replace(')','');
+    userRemovesDrum(drumType);
+  }
+  else if (userInput.startsWith("start")) {
+    userStartsMachine();
+  }
+  else if (userInput.startsWith("stop")) {
+    userStopsMachine();
+  }
+}
+
+function userAddsDrum(drumType, sequence) {
+  let msg = "<span style='color: #EDEACC'>" + drumType + "</span>" + " drum updated.<br>"
+  printToConsole(msg);
+
+  if (isCurrentlyPlaying) {
+    stopAll();
+    window[drumType].updateSequence(sequence);
+
+    if (isStartButtonOn){
+      let msg = "Loading..."
+      printToConsole(msg);
+      setTimeout(function(){ playAll(); }, secondsPerBeat*4050); // timeout waits until first loop ends
+    }
+  } else {
+    window[drumType].updateSequence(sequence);
+
+    if (isStartButtonOn) {
+      playAll();
+    }
+  }
+}
+
+function userRemovesDrum(drumType) {
+  userAddsDrum(drumType, [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]);
+}
+
+function userResetsMachine() {
+  // set all drums to [0000]
+}
+
+function userClearsConsole() {
+  clearConsole();
+}
+
+function userStopsMachine() {
+  let msg = "Drum machine stopped.<br>"
+  printToConsole(msg);
+  isStartButtonOn = false;
+  stopAll();
+}
+
+function userStartsMachine() {
+  if (isStartButtonOn) {
+    let msg = "Drum machine has already started.<br>"
+    printToConsole(msg);
+  } else {
+    isStartButtonOn = true;
+    playAll();
+  }
+}
+
+function userSetsSpeed() {
+  // update tempo
+}
 
 /*
 |--------------------------------------------------------------------------
@@ -85,14 +210,6 @@ function clearConsole() {
 | ...
 |
 */
-
-window.addEventListener("click", function(event) {
-  // play(conga, congaBuffer);
-  // play(tomMed, tomMedBuffer);
-
-  //newSeq = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
-  //setTimeout(function(){ tomMed.updateSequence(newSeq); }, 8000);
-});
 
 function handleKeyPress(e){
 
@@ -106,8 +223,8 @@ function handleKeyPress(e){
     }
     else if (isValidInput(userInput)) {
       displayValidInput(userInput);
+      centralNavigation(userInput);
       isFirstLaunchOfConsole = false;
-      // handleValidCommand(userInput)
     }
     else {
       if (isFirstLaunchOfConsole) {
@@ -122,6 +239,7 @@ function handleKeyPress(e){
     }
   }
 }
+
 
 /*
 |--------------------------------------------------------------------------
@@ -158,7 +276,7 @@ function handleLaunchPrompt(userInput) {
 function handleTutorial(userInput) {
   // ROUND 0
   if (tutorialStepNumber == 0) {
-    let msg = "Let&apos;s start with something simple.<br>We are going to add a Clap drum, placing one 16th note at the beginning of each beat like a metronome.<br><br>Try this: <span style='color: #EDEACC'>addDrum(clap, [1,0,0,0, 1,0,0,0, 1,0,0,0, 1,0,0,0])</span><br><br>The 1&apos;s correspond with an audible 16th note. The 0&apos;s correspond with silence.<br>"
+    let msg = "Let&apos;s start with something simple.<br>We are going to add a <span style='color: #EDEACC'>snare</span> drum, placing one 16th note at the beginning of each beat like a metronome.<br><br>Try this: <span style='color: #EDEACC'>addDrum(snare, [1,0,0,0, 1,0,0,0, 1,0,0,0, 1,0,0,0])</span><br><br>The 1&apos;s correspond with an audible 16th note. The 0&apos;s correspond with silence.<br>"
     printToConsole(msg);
     isTutorialMode = true;
     tutorialStepNumber += 1;
@@ -166,12 +284,13 @@ function handleTutorial(userInput) {
 
   // ROUND 1
   else if (tutorialStepNumber == 1) {
-    let correctAnswer = "addDrum(clap,[1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0])";
+    let correctAnswer = "addDrum(snare,[1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0])";
 
     // User answers correctly
     if (userInput == correctAnswer) {
       displayValidInput(userInput);
-      // TODO: actually implement the function the user asked, with a msg like "Clap drum added."
+      userAddsDrum("snare", [1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0]);
+
       let msg = "Good, now let&apos;s start the drum.<br>Try this: <span style='color: #EDEACC'>start()</span><br>"
       printToConsole(msg);
       tutorialStepNumber += 1;
@@ -179,7 +298,7 @@ function handleTutorial(userInput) {
     // User answers incorrectly
     else {
       displayErrorInput(userInput)
-      let msg = "Invalid command, let&apos;s try again. When in doubt, use copy and paste.<br>Try this: <span style='color: #EDEACC'>addDrum(clap, [1,0,0,0, 1,0,0,0, 1,0,0,0, 1,0,0,0])</span><br>"
+      let msg = "Invalid command, let&apos;s try again. When in doubt, use copy and paste.<br>Try this: <span style='color: #EDEACC'>addDrum(snare, [1,0,0,0, 1,0,0,0, 1,0,0,0, 1,0,0,0])</span><br>"
       printToConsole(msg);
     }
   }
@@ -191,7 +310,7 @@ function handleTutorial(userInput) {
     // User answers correctly
     if (userInput == correctAnswer) {
       displayValidInput(userInput);
-      // TODO: actually implement the start function the user asked, with a msg like "Drum started."
+      userStartsMachine();
       let msg = "Nice!<br><br>The metronome has started and you are ready to live-code some music.<br>Refer to the Reference to add more drums or adjust speed and playback.<br><br>Happy drumming!<br>"
       printToConsole(msg);
       isTutorialMode = false;
@@ -220,7 +339,7 @@ function skipTutorial(){
 | User Input Handling
 |--------------------------------------------------------------------------
 |
-| Checking, displaying, and erasing of inputs from the user.
+| Checking, disCurrentlyPlaying, and erasing of inputs from the user.
 |
 |
 */
@@ -231,7 +350,11 @@ function clearInput() {
 }
 
 function displayValidInput(userInput) {
-  let msg = "<span style='color: #00F900'>" + ">> " + userInput + "</span><br>"
+  result = userInput;
+  if (userInput.startsWith("addDrum")) {
+    result = prettyPrint(userInput);
+  }
+  let msg = "<span style='color: #00F900'>" + ">> " + result + "</span><br>"
   printToConsole(msg);
 }
 
@@ -274,6 +397,27 @@ function isValidInput(userInput) {
   return regex1.test(userInput) || regex2.test(userInput) || check3 || check4
 }
 
+// Separate array according to beats so that it is easier
+// for the user to understand
+function prettyPrint(userInput){
+  newString = (userInput.split('addDrum('))[1].split(',[')
+  type = newString[0]
+  sequence = newString[1].replace('])', '')
+
+  counter = 0
+  prettySequence = ""
+  for (let c = 0; c < sequence.length; c++) {
+    if (counter == 7) {
+      counter = 0
+      prettySequence += ', '
+    } else {
+      counter++;
+      prettySequence += sequence[c];
+    }
+  }
+  return "addDrum(" + type + ", [" + prettySequence + '])'
+}
+
 /*
 |--------------------------------------------------------------------------
 | Playback Functionality
@@ -285,9 +429,12 @@ function isValidInput(userInput) {
 |
 */
 
+var intervalsPlaying = [];
+
 function play(drum, buffer){
   playSequence(drum, buffer);
-  setInterval(function(){ playSequence(drum, buffer); }, secondsPerBeat*4000);
+  let id = setInterval(function(){ playSequence(drum, buffer); }, secondsPerBeat*4000);
+  intervalsPlaying.push(id);
 }
 
 function playSequence(drum, buffer) {
@@ -302,7 +449,16 @@ function playSequence(drum, buffer) {
   }
 }
 
+function stop(drum, buffer) {
+  deleteOldIntervals();
+}
 
+function deleteOldIntervals() {
+  for (let i = 0; i < intervalsPlaying.length; i++) {
+    clearInterval(intervalsPlaying[i]);
+  }
+  intervalsPlaying = [];
+}
 
 
 /*

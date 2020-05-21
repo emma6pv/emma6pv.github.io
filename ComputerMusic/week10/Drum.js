@@ -34,10 +34,25 @@ class Drum {
   }
   playSample(audioContext, audioBuffer) {
     const sampleSource = audioContext.createBufferSource();
+    var gainNode = audioContext.createGain();
+    gainNode.gain.value = 0.5;
+    sampleSource.buffer = audioBuffer;
+    sampleSource.connect(gainNode);
+
+    sampleSource.playbackRate.setValueAtTime(1, this.context.currentTime);
+    sampleSource.connect(audioContext.destination)
+    gainNode.connect(audioContext.destination);
+    sampleSource.start();
+    return sampleSource;
+  }
+
+  stopSample(audioContext, audioBuffer) {
+    const sampleSource = audioContext.createBufferSource();
     sampleSource.buffer = audioBuffer;
     sampleSource.playbackRate.setValueAtTime(1, this.context.currentTime);
     sampleSource.connect(audioContext.destination)
     sampleSource.start();
+    sampleSource.stop();
     return sampleSource;
   }
 }
