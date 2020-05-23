@@ -298,7 +298,7 @@ function handleTutorial(userInput) {
     // User answers incorrectly
     else {
       displayErrorInput(userInput)
-      let msg = "Invalid command, let&apos;s try again. When in doubt, use copy and paste.<br>Try this: <span style='color: #EDEACC'>addDrum(snare, [1,0,0,0, 1,0,0,0, 1,0,0,0, 1,0,0,0])</span><br>"
+      let msg = "Oops. Let&apos;s try again. When in doubt, use copy and paste.<br>Try this: <span style='color: #EDEACC'>addDrum(snare, [1,0,0,0, 1,0,0,0, 1,0,0,0, 1,0,0,0])</span><br>"
       printToConsole(msg);
     }
   }

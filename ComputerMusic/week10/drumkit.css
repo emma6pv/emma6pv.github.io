@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@686&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Open+Sans&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@330&display=swap'); */
 
 body {
     font-family: 'Inconsolata';
@@ -7,6 +9,13 @@ body {
 h1, h2, h3, h4, h5, h6 {
   line-height: .5;
   /* color: #2A2720; */
+}
+
+p {
+  /* font-family: 'Merriweather', serif; */
+  font-size: 14px;
+  font-family: 'Open Sans', sans-serif;
+  /* font-family: 'Inconsolata', monospace; */
 }
 
 .console {

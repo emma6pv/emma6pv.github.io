@@ -17,14 +17,82 @@
         <h1><span style="color: #EF7600">TR-808</span> Live Coding Kit</h1>
 
         <div class="console" id="console">
-
           <div class="consoleWindow" id="consoleWindow"></div>
-
           <div class="consoleTanBox">
             <input type="text" placeholder="Type here" class="consoleInput" id="consoleInput" onkeypress="handleKeyPress(event)"/>
           </div>
+        </div><br>
 
-        </div>
+        <h2>Reference</h2>
+        <p> Drum.kit is a live-coding drum kit interface.
+          With Drum.kit, you can compose beats programatically <br>using the functions detailed below.
+          These functions allow for adjustments of speed, playback, and <br>note placement.
+
+        </p><hr>
+        <h3  style="color: #EF7600">Drums</h3>
+        <p> Drum.kit contains 12 different drum samples based on the Roland TR-808.
+          <br>Here are the drum types:
+        </p>
+        <ul>
+          <li>crash</li>
+          <li>tomHigh</li>
+          <li>tomMed</li>
+          <li>tomLow</li>
+          <li>hatClose</li>
+          <li>hatOpen</li>
+          <li>snare</li>
+          <li>kick</li>
+          <li>clap</li>
+          <li>cowbell</li>
+          <li>conga</li>
+          <li>maraca</li>
+        </ul>
+        <p>Use these types when you call <span style="font-family: 'Inconsolata'">addDrum()</span> or <span style="font-family: 'Inconsolata'">removeDrum()</span>.
+        </p><hr>
+
+
+        <h3 style="color: #EF7600">Functions</h3>
+        <p>There are six functions you can use to program your drum:
+
+          <br><br><span style="font-family: 'Inconsolata'; font-size: 17px;">start()</span><br>
+          - Starts the drum machine. <br>
+          - Automatically loops at the end of each measure.
+
+          <br><br><span style="font-family: 'Inconsolata'; font-size: 17px;">stop()</span><br>
+          - Stops the drum machine. <br>
+          - Previously added Drum objects will not be removed. Calling <span style="font-family: 'Inconsolata'">start()</span> again will reactivate them.
+
+          <br><br><span style="font-family: 'Inconsolata'; font-size: 17px;">addDrum(type, [array with sequence of notes])</span><br>
+          - Adds a new drum with specific type and note-mapping <br>
+          - The <span style="font-family: 'Inconsolata'">type</span> should correspond to one of the twelve drum types. <br>
+          - The <span style="font-family: 'Inconsolata'">array</span> expects 16 items. These 16 items represent a sequence of 16th notes in one measure.  <br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• The array should be formatted as so:&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-family: 'Inconsolata'">[ 1, 0, 0, 0,&nbsp;&nbsp;1, 0, 0, 0, &nbsp;&nbsp;1, 0 0 0,&nbsp;&nbsp;1, 0, 0, 0 ]</span><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• The 1’s correspond with an audible 16th note and the 0’s correspond with silence.<br>
+          - Example: <span style="font-family: 'Inconsolata'; font-size: 16px">addDrum(</span>
+          <span style="font-family: 'Inconsolata'; font-size: 16px; color: #FF40FF;">conga</span>,&nbsp;
+          <span style="font-family: 'Inconsolata'; font-size: 16px; color: #0433FF;">[</span>
+          <span style="font-family: 'Inconsolata'; font-size: 16px; color: #0096FF;">0,0,1,1, 0,0,0,0, 0,0,1,1, 0,0,0,0</span>
+          <span style="font-family: 'Inconsolata'; font-size: 16px; color: #0433FF;">]</span>
+          <span style="font-family: 'Inconsolata'; font-size: 16px">)</span>
+
+          <br><br><span style="font-family: 'Inconsolata'; font-size: 17px;">removeDrum(type)</span><br>
+          - Removes the specified drum type from the mix entirely.<br>
+          - The type must correspond to one of the twelve drums.<br>
+          - Example: <span style="font-family: 'Inconsolata'; font-size: 16px">removeDrum(</span>
+          <span style="font-family: 'Inconsolata'; font-size: 16px; color: #FF40FF;">conga</span>&nbsp;
+          <span style="font-family: 'Inconsolata'; font-size: 16px">)</span>
+
+          <br><br><span style="font-family: 'Inconsolata'; font-size: 17px;">setSpeed(bpm)</span><br>
+          - Sets the speed of the notes according to a given BPM.  <br>
+          - Expects a BPM between 30 and 200.
+
+          <br><br><span style="font-family: 'Inconsolata'; font-size: 17px;">clear()</span><br>
+          - Clears the console.
+        </p>
+        <br><br>
+
+
+
 
       </body>
 </HTML>
