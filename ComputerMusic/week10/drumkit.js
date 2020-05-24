@@ -90,9 +90,9 @@ function stopAll() {
 | Console Log
 |--------------------------------------------------------------------------
 |
-| ...
-| ...
-| ...
+| Handles the printing and updating
+| of the console.
+|
 |
 */
 
@@ -112,6 +112,7 @@ function printToConsole(msg){
 
 function clearConsole() {
   document.getElementById('consoleWindow').innerHTML = "";
+  consoleContents = [];
 }
 
 /*
@@ -143,6 +144,14 @@ function centralNavigation(userInput){
   else if (userInput.startsWith("stop")) {
     userStopsMachine();
   }
+  else if (userInput.startsWith("setSpeed")) {
+    let newStr = userInput.replace("setSpeed(", "");
+    let bpm = parseInt((newStr.replace(")", "")));
+    userSetsSpeed(bpm);
+  }
+  else if (userInput.startsWith("clear")) {
+    userClearsConsole();
+  }
 }
 
 function userAddsDrum(drumType, sequence) {
@@ -171,10 +180,6 @@ function userRemovesDrum(drumType) {
   userAddsDrum(drumType, [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]);
 }
 
-function userResetsMachine() {
-  // set all drums to [0000]
-}
-
 function userClearsConsole() {
   clearConsole();
 }
@@ -196,18 +201,35 @@ function userStartsMachine() {
   }
 }
 
-function userSetsSpeed() {
-  // update tempo
+function userSetsSpeed(bpm) {
+  let oldSecondsPerBeat = secondsPerBeat;
+
+  tempo = bpm;
+  secondsPerBeat = 60.0 / tempo;
+
+  if (isCurrentlyPlaying) {
+    stopAll();
+
+    if (isStartButtonOn){
+      let msg = "Loading..."
+      printToConsole(msg);
+      setTimeout(function(){ playAll(); }, oldSecondsPerBeat*4050); // timeout waits until first loop ends
+    }
+  } else {
+    if (isStartButtonOn) {
+      playAll();
+    }
+  }
 }
 
 /*
 |--------------------------------------------------------------------------
-| Event Handlers
+| Event Handler
 |--------------------------------------------------------------------------
 |
-| ...
-| ...
-| ...
+| Event is triggered when the user presses the
+| enter key inside the input box.
+| From there, decide where to go next in the program.
 |
 */
 
@@ -339,7 +361,7 @@ function skipTutorial(){
 | User Input Handling
 |--------------------------------------------------------------------------
 |
-| Checking, disCurrentlyPlaying, and erasing of inputs from the user.
+| Checking, displaying, and erasing of inputs from the user.
 |
 |
 */
