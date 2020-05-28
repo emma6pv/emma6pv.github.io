@@ -39,15 +39,27 @@ const rawPath = 'https://raw.githubusercontent.com/emma6pv/emma6pv.github.io/mas
 
 // Setup
 var consoleContents = ["Welcome to the console.<br>This is where you&apos;ll code your drum kit.<br><br>Want a quick tutorial? (Y/N)<br>"];
+var userCommands = [];
 var isFirstLaunchOfConsole = true;
 var isTutorialMode = false;
 var tutorialStepNumber = 0;
 var isStartButtonOn = false;
 var isCurrentlyPlaying = false;
 
+// Upon Launch
 setupSamples();
 updateConsole();
 
+
+/*
+|--------------------------------------------------------------------------
+| Final Playback
+|--------------------------------------------------------------------------
+|
+| Stop and start ALL drums
+|
+|
+*/
 
 function playAll(){
   isCurrentlyPlaying = true;
@@ -232,12 +244,17 @@ function userSetsSpeed(bpm) {
 | From there, decide where to go next in the program.
 |
 */
+var position;
 
+// User presses the ENTER key
+// to enter their input
 function handleKeyPress(e){
 
   if (enterKeyPressed(e)){
 
     var userInput = document.getElementById('consoleInput').value.toString().replace( /\s/g, '');
+    userCommands.push(prettyPrint(userInput));
+    position = userCommands.length - 1;
     clearInput();
 
     if (isTutorialMode) {
@@ -261,6 +278,42 @@ function handleKeyPress(e){
     }
   }
 }
+
+
+// User presses the UP or DOWN key
+// to scroll through past inputs
+document.addEventListener('keydown', function(e) {
+
+  // If UP arrow is pressed, go backwards through commands
+  if (upArrowKeyPressed(e)) {
+    let lastItem = userCommands[position];
+
+    if (lastItem == undefined) {
+      position = userCommands.length; // reset
+    } else {
+      document.getElementById("consoleInput").value = lastItem;
+    }
+
+    if (position != 0) {
+      position -= 1;
+    }
+
+  // If DOWN arrow is pressed, go forwards through commands
+  } else if (downArrowKeyPressed(e)) {
+
+    if (position != userCommands.length-1) {
+      position += 1
+      let nextItem = userCommands[position];
+
+      if (nextItem == undefined) {
+        position = -1; // reset
+      } else {
+        document.getElementById("consoleInput").value = nextItem;
+      }
+    }
+
+  }
+});
 
 
 /*
@@ -398,6 +451,16 @@ function enterKeyPressed(e){
   return key == 13
 }
 
+function upArrowKeyPressed(e){
+  var key=e.keyCode || e.which; // credit to https://stackoverflow.com/a/13987361
+  return key == 38
+}
+
+function downArrowKeyPressed(e){
+  var key=e.keyCode || e.which; // credit to https://stackoverflow.com/a/13987361
+  return key == 40
+}
+
 function isValidInput(userInput) {
   // addDrum
   let regex1 = /addDrum\(\b(?:clap|crash|tomHigh|tomMed|tomLow|hatClose|hatOpen|snare|kick|cowbell|conga|maraca)\b\,\[[01],[01],[01],[01],[01],[01],[01],[01],[01],[01],[01],[01],[01],[01],[01],[01]\]\)/;
@@ -422,22 +485,29 @@ function isValidInput(userInput) {
 // Separate array according to beats so that it is easier
 // for the user to understand
 function prettyPrint(userInput){
-  newString = (userInput.split('addDrum('))[1].split(',[')
-  type = newString[0]
-  sequence = newString[1].replace('])', '')
 
-  counter = 0
-  prettySequence = ""
-  for (let c = 0; c < sequence.length; c++) {
-    if (counter == 7) {
-      counter = 0
-      prettySequence += ', '
-    } else {
-      counter++;
-      prettySequence += sequence[c];
+  if (userInput.startsWith("addDrum(")) {
+    newString = (userInput.split('addDrum('))[1].split(',[')
+    type = newString[0]
+    sequence = newString[1].replace('])', '')
+
+    counter = 0
+    prettySequence = ""
+    for (let c = 0; c < sequence.length; c++) {
+      if (counter == 7) {
+        counter = 0
+        prettySequence += ', '
+      } else {
+        counter++;
+        prettySequence += sequence[c];
+      }
     }
+    return "addDrum(" + type + ", [" + prettySequence + '])'
+  } else {
+    return userInput;
   }
-  return "addDrum(" + type + ", [" + prettySequence + '])'
+
+
 }
 
 /*
