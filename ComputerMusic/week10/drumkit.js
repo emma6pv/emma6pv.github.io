@@ -189,6 +189,7 @@ function userAddsDrum(drumType, sequence) {
 }
 
 function userRemovesDrum(drumType) {
+  // removing a drum is the same as adding an empty drum sequence
   userAddsDrum(drumType, [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]);
 }
 
@@ -424,6 +425,7 @@ function clearInput() {
   event.preventDefault();
 }
 
+// valid input will display green
 function displayValidInput(userInput) {
   result = userInput;
   if (userInput.startsWith("addDrum")) {
@@ -433,6 +435,7 @@ function displayValidInput(userInput) {
   printToConsole(msg);
 }
 
+// error input will display red
 function displayErrorInput(userInput){
   let msg = "<span style='color: #DE1101'>" + ">> " + userInput + "</span><br>"
   printToConsole(msg);
@@ -461,6 +464,7 @@ function downArrowKeyPressed(e){
   return key == 40
 }
 
+// Uses regex to check whether an input is valid
 function isValidInput(userInput) {
   // addDrum
   let regex1 = /addDrum\(\b(?:clap|crash|tomHigh|tomMed|tomLow|hatClose|hatOpen|snare|kick|cowbell|conga|maraca)\b\,\[[01],[01],[01],[01],[01],[01],[01],[01],[01],[01],[01],[01],[01],[01],[01],[01]\]\)/;
@@ -515,29 +519,39 @@ function prettyPrint(userInput){
 | Playback Functionality
 |--------------------------------------------------------------------------
 |
-| Core functions that handle playback.
+| Core functions that handle playback and scheduling.
 | Play and stop files.
 | Automatically loops drums after each measure.
 |
 */
 
+// when you iniate a setInterval you are given an interval ID
+// here I am keeping track of each interval
+// so i know which intervals to stop if/when the user stops the machine
 var intervalsPlaying = [];
 
+
+// play a drum
 function play(drum, buffer){
   playSequence(drum, buffer);
   let id = setInterval(function(){ playSequence(drum, buffer); }, secondsPerBeat*4000);
   intervalsPlaying.push(id);
 }
 
+
+// play a drum according to its specific sequence
 function playSequence(drum, buffer) {
-  let seq = drum.getSequence();
+  let seq = drum.getSequence(); // the sequence is an array of 16 0's and 1's representing 16th notes
   var  time = 10;
 
+  // check each index in the drum sequence
   for (let i = 0; i < 16; i++){
+    // if there is a 1 (meaning a note should be played)
     if (seq[i] == 1) {
+      // play this note at a specific moment in time
       setTimeout(function(){ drum.playSample(audioCtx, buffer); }, time);
     }
-    time += secondsPerBeat*1000/4;
+    time += secondsPerBeat*1000/4; // each iteration adds a space in time between 16th notes. ie: the 2nd note should be x seconds after the 1st note.
   }
 }
 
