@@ -525,13 +525,15 @@ function prettyPrint(userInput){
 |
 */
 
-// when you iniate a setInterval you are given an interval ID
+// when you iniate a
+ you are given an interval ID
 // here I am keeping track of each interval
 // so i know which intervals to stop if/when the user stops the machine
 var intervalsPlaying = [];
 
 
 // play a drum
+// this function deals with time between measures
 function play(drum, buffer){
   playSequence(drum, buffer);
   let id = setInterval(function(){ playSequence(drum, buffer); }, secondsPerBeat*4000);
@@ -540,6 +542,7 @@ function play(drum, buffer){
 
 
 // play a drum according to its specific sequence
+// this function deals with time between notes
 function playSequence(drum, buffer) {
   let seq = drum.getSequence(); // the sequence is an array of 16 0's and 1's representing 16th notes
   var  time = 10;
