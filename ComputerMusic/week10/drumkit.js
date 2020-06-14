@@ -525,7 +525,7 @@ function prettyPrint(userInput){
 |
 */
 
-// when you iniate a you are given an interval ID
+// when you iniate a setInterval function you are given an interval ID
 // here I am keeping track of each interval
 // so i know which intervals to stop if/when the user stops the machine
 var intervalsPlaying = [];
